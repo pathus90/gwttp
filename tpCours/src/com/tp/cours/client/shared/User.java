@@ -1,36 +1,40 @@
 package com.tp.cours.client.shared;
 
-import java.io.Serializable;
+public abstract class User {
+	protected int id;
+	protected String nom;
+	protected String pwd;
 
-public class User implements Serializable
-{
+	public User(int id, String nom, String pwd) {
+		super();
+		this.id = id;
+		this.nom = nom;
+		this.pwd = pwd;
+	}
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	private String username;
-	private String password;
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 	
-	public User()
-	{
-		
+	public String getNom() {
+		return nom;
 	}
 
-	public String getUsername() {
-		return username;
+	public void setNom(String nom) {
+		this.nom = nom;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public String getPwd() {
+		return pwd;
 	}
 
-	public String getPassword() {
-		return password;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
-
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
+	
+	public abstract String getType();
 }
