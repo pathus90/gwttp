@@ -10,6 +10,9 @@ import com.google.gwt.user.client.ui.HasVerticalAlignment;
 
 public class Login extends Composite {
 
+	private TextBox textBox,textBox1;
+	private 	Button btnNewButton;
+	
 	public Login() {
 		
 		VerticalPanel verticalPanel = new VerticalPanel();
@@ -27,23 +30,36 @@ public class Login extends Composite {
 		lblNewLabel_1.setStyleName("gwt-Label-login");
 		flexTable.setWidget(0, 0, lblNewLabel_1);
 		
-		TextBox textBox = new TextBox();
+		textBox = new TextBox();
 		flexTable.setWidget(0, 1, textBox);
 		
 		Label lblNewLabel_2 = new Label("Password:");
 		lblNewLabel_2.setStyleName("gwt-Label-login");
 		flexTable.setWidget(1, 0, lblNewLabel_2);
 		
-		TextBox textBox_1 = new TextBox();
-		flexTable.setWidget(1, 1, textBox_1);
+	    textBox1 = new TextBox();
+		flexTable.setWidget(1, 1, textBox1);
 		
 		Label lblNewLabel = new Label("Erreur de login");
 		lblNewLabel.setStyleName("gwt-Label-error");
 		flexTable.setWidget(2, 1, lblNewLabel);
 		
-		Button btnNewButton = new Button("Login");
+		btnNewButton = new Button("Login");
 		btnNewButton.setStyleName("gwt-Button-login");
 		flexTable.setWidget(3, 1, btnNewButton);
+	}
+	public String GetLogin()
+	{
+		return textBox.getText();
+	}
+	public String GetPassword()
+	{
+		return textBox1.getText();
+	}
+	
+	public Button getButton()
+	{
+		return btnNewButton;
 	}
 
 }

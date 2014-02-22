@@ -14,6 +14,8 @@
  *******************************************************************************/
 package com.tp.cours.server.services;
 
+import java.util.ArrayList;
+
 import com.tp.cours.client.services.LoginService;
 import com.tp.cours.client.shared.User;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -21,6 +23,7 @@ import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 public class LoginServiceImpl extends RemoteServiceServlet implements LoginService
 {
 
+	User admUser=new User();
 	@Override
 	public boolean Login(String name, String password) {
 		// TODO Auto-generated method stub
@@ -32,4 +35,8 @@ public class LoginServiceImpl extends RemoteServiceServlet implements LoginServi
 		}
 		return t;
 	}
+	
+	
+	
+	
 }

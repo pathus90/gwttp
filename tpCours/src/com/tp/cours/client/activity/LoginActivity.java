@@ -72,7 +72,7 @@ public class LoginActivity extends AbstractActivity implements LoginView.Present
 				else
 				{
 					System.out.println("false");
-					clientFactory.getLoginView().error("erreur de login");
+				//	clientFactory.getLoginView().error("erreur de login");
 				}
 			}
 			

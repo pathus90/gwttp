@@ -52,6 +52,5 @@ public class ClientFactoryImpl implements ClientFactory
 		// TODO Auto-generated method stub
 		return mview;
 	}
-	
 
 }

@@ -31,20 +31,21 @@ public class LoginViewImpl extends FlowPanel implements LoginView {
 	private Presenter listener;
 	private Login login;
 	public LoginViewImpl() {
-		
+
 		login = new Login();
 		add(login);
-		
+		Button button_login=login.getButton();
+		button_login.addClickHandler(new ClickHandler() {
 
+			@Override
+			public void onClick(ClickEvent event) {
+				listener.login(login.GetLogin(), login.GetPassword());
+
+			}
+		});	
 	}
 	@Override
 	public void setPresenter(Presenter listener) {
 		this.listener = listener;
-	
 	}
-	@Override
-	public void error(String s) {
-	//	lblNewLabel2.setText(s);
-	}
-
 }

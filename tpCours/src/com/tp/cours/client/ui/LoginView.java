@@ -25,8 +25,6 @@ public interface LoginView extends IsWidget {
   
 
 	void setPresenter(Presenter listener);
-	void error(String string);
-	
 	public interface Presenter {
 		/**
 		 * Navigate to a new Place in the browser.
