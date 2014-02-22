@@ -1,0 +1,10 @@
+<module>
+	<inherits name="com.google.gwt.user.User"/>
+	<inherits name="com.google.gwt.user.theme.standard.Standard"/>
+	<inherits name="com.google.gwt.place.Place"/>
+	<inherits name="com.google.gwt.activity.Activity"/>
+	<entry-point class="com.tp.cours.client.tpcours"/>
+	<replace-with class="com.tp.cours.client.ClientFactoryImpl">
+		<when-type-is class="com.tp.cours.client.ClientFactory"/>
+	</replace-with>
+</module>

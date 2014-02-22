@@ -1,0 +1,2 @@
+serviceClass: com.tp.cours.client.services.LoginService
+path: D80F6E6E9FE6E020ED3870E65665B1F3.gwt.rpc
