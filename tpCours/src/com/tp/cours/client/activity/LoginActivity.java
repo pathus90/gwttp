@@ -18,6 +18,7 @@ import com.tp.cours.client.ClientFactory;
 import com.tp.cours.client.place.LoginPlace;
 import com.tp.cours.client.place.MainPlace;
 import com.tp.cours.client.services.LoginService;
+import com.tp.cours.client.shared.Parametres;
 import com.tp.cours.client.shared.User;
 import com.tp.cours.client.ui.LoginView;
 import com.tp.cours.client.ui.LoginViewImpl;
@@ -61,25 +62,25 @@ public class LoginActivity extends AbstractActivity implements LoginView.Present
 	@Override
 	public void login(String name, String password) 
 	{
-		LoginService.Util.getInstance().Login(name, password, new AsyncCallback<Boolean>() {
-			
-			@Override
-			public void onSuccess(Boolean result) {
-				if (result)
-				{
-					goTo(new MainPlace("ok"));
-				}
-				else
-				{
-					System.out.println("false");
-				//	clientFactory.getLoginView().error("erreur de login");
-				}
-			}
+		LoginService.Util.getInstance().Login(name, password, new AsyncCallback<String>() {	
 			
 			@Override
 			public void onFailure(Throwable caught) {
 				// TODO Auto-generated method stub
 				
+			}
+
+			@Override
+			public void onSuccess(String result) {
+				if (result.equalsIgnoreCase(Parametres.typeAdmin)) {
+					System.out.println("type: Admin");
+				}
+				else if (result.equalsIgnoreCase(Parametres.typeClient)) {
+					System.out.println("type: Client");
+				}
+				else {
+					System.out.println("error");
+				}
 			}
 		});
 		

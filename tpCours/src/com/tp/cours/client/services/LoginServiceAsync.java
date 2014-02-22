@@ -17,5 +17,5 @@ package com.tp.cours.client.services;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 
 public interface LoginServiceAsync {
-	public void Login (String name,String password, AsyncCallback<Boolean> callback);
+	public void Login (String name,String password, AsyncCallback<String> callback);
 }

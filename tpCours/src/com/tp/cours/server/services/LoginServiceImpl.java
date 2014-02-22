@@ -17,26 +17,40 @@ package com.tp.cours.server.services;
 import java.util.ArrayList;
 
 import com.tp.cours.client.services.LoginService;
+import com.tp.cours.client.shared.Admin;
+import com.tp.cours.client.shared.Client;
+import com.tp.cours.client.shared.Parametres;
 import com.tp.cours.client.shared.User;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
 public class LoginServiceImpl extends RemoteServiceServlet implements LoginService
 {
+	ArrayList<User> users = new ArrayList<>();
 
-	User admUser=new User();
+
+
+
 	@Override
-	public boolean Login(String name, String password) {
+	public String Login(String name, String password) {
+		users.add(new Admin(0, "admin", "admin"));
+		users.add(new Client(1, "lulu", "lala"));
+		String s="";
 		// TODO Auto-generated method stub
-		boolean t=false;
-		if((name.equalsIgnoreCase("pathus"))&&(password.equalsIgnoreCase("pathus")))
-		{		
-			t=true;
-			System.out.println(t);
+		for(int i = 0; i < users.size(); i++) {
+			if((name.equalsIgnoreCase(users.get(i).getNom()))&&(password.equalsIgnoreCase(users.get(i).getPwd())))
+			{	
+				if(users.get(i).getType() == Parametres.typeAdmin) {
+					s = Parametres.typeAdmin;
+				}
+				if(users.get(i).getType() == Parametres.typeClient) {
+					s = Parametres.typeClient;
+				}
+			}	
 		}
-		return t;
+		return s;
 	}
-	
-	
-	
-	
+
+
+
+
 }

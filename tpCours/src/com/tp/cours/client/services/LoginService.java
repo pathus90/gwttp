@@ -33,5 +33,5 @@ public interface LoginService extends RemoteService {
 			return instance;
 		}
 	}
-	public boolean Login (String name,String password);
+	public String Login (String name,String password);
 }
